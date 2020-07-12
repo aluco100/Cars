@@ -12,18 +12,24 @@ struct WalktroughAsset: View {
     @StateObject var asset: WalktroughModel
     
     var body: some View {
-        Image(asset.imageName)
-            .resizable()
-            .overlay(Color.black.opacity(0.43))
-            .overlay(
-                VStack{
-                    Spacer()
-                    Text(asset.title)
-                        .foregroundColor(.white)
-                        .font(.custom("OpenSans-regular", size: 22.0))
-                }
-                .padding(.bottom, 64)
-            )
+        GeometryReader(content: { geometry in
+            Image(asset.imageName)
+                .overlay(
+                    Color.black
+                        .opacity(0.43)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                )
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                .overlay(
+                    VStack{
+                        Spacer()
+                        Text(asset.title)
+                            .foregroundColor(.white)
+                            .font(.custom("OpenSans-regular", size: 22.0))
+                    }
+                )
+        })
+        
     }
 }
 

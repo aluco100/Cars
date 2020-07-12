@@ -11,9 +11,12 @@ struct FormButton: View {
     
     @State var title: String
     
+    var trigger: () -> Void
+    
     var body: some View {
         Button(title, action: {
             print("TODO")
+            trigger()
         })
         .frame(maxWidth: .infinity)
         .frame(height: 50)
@@ -29,6 +32,6 @@ struct FormButton: View {
 
 struct FormButton_Previews: PreviewProvider {
     static var previews: some View {
-        FormButton(title: "TEST")
+        FormButton(title: "TEST", trigger: {})
     }
 }
