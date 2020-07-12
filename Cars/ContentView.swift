@@ -28,6 +28,8 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .font(.custom("GreatVibes-Regular", size: 64.0))
                     Spacer()
+                    FormButton(title: "Ingresar")
+                        .padding(.bottom, 160)
                 }.padding(.top, 64))
             
         }

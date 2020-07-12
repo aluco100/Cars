@@ -20,6 +20,7 @@
 		D0FD15AE24BAC32300D10FE1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0FD15AA24BAC32300D10FE1 /* OpenSans-Regular.ttf */; };
 		D0FD15AF24BAC32300D10FE1 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0FD15AB24BAC32300D10FE1 /* OpenSans-Semibold.ttf */; };
 		D0FD15B124BAC99000D10FE1 /* GreatVibes-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0FD15B024BAC99000D10FE1 /* GreatVibes-Regular.otf */; };
+		D0FD15B424BACF6B00D10FE1 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD15B324BACF6B00D10FE1 /* FormButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D0FD15AA24BAC32300D10FE1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		D0FD15AB24BAC32300D10FE1 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		D0FD15B024BAC99000D10FE1 /* GreatVibes-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.otf"; sourceTree = "<group>"; };
+		D0FD15B324BACF6B00D10FE1 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				D0FD157624BAB3D500D10FE1 /* CarsApp.swift */,
 				D0FD157824BAB3D500D10FE1 /* ContentView.swift */,
+				D0FD15B224BACF4D00D10FE1 /* Fragments */,
 				D0FD15A424BAC05100D10FE1 /* Model */,
 				D0FD15A124BABFD400D10FE1 /* UI */,
 				D0FD157A24BAB3D500D10FE1 /* Assets.xcassets */,
@@ -173,6 +176,14 @@
 				D0FD15AB24BAC32300D10FE1 /* OpenSans-Semibold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0FD15B224BACF4D00D10FE1 /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD15B324BACF6B00D10FE1 /* FormButton.swift */,
+			);
+			path = Fragments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FD15B424BACF6B00D10FE1 /* FormButton.swift in Sources */,
 				D0FD157924BAB3D500D10FE1 /* ContentView.swift in Sources */,
 				D0FD15A624BAC06600D10FE1 /* WalktroughModel.swift in Sources */,
 				D0FD15A324BABFF500D10FE1 /* WalktroughAsset.swift in Sources */,
