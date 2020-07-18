@@ -22,8 +22,8 @@ struct LoginView: View {
                 .shadow(radius: 40)
                 .frame(height: 450)
             VStack{
-                FormTextField(value: userName, message: "Username Required", placeholder: "Usuario").padding(.top, 60)
-                FormTextField(value: password, message: "Password Required", placeholder: "Contraseña")
+                FormTextField(value: $userName, message: "Username Required", placeholder: "Usuario", validation: [.email,.required], firstToggle: true).padding(.top, 60)
+                FormTextField(value: $password, message: "Password Required", placeholder: "Contraseña", validation: [.required], firstToggle: true)
                 Button("Ingresar", action: {
                     print("text")
                 })

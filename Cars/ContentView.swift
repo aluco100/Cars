@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 
-                NavigationLink(destination:Text("caca"), tag: 1, selection: $tag) {
+                NavigationLink(destination:LoginView(userName: "", password: ""), tag: 1, selection: $tag) {
                     EmptyView()
                   }
                 
