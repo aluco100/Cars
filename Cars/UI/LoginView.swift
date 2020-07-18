@@ -23,7 +23,7 @@ struct LoginView: View {
                 .frame(height: 450)
             VStack{
                 FormTextField(value: $userName, message: "Username Required", placeholder: "Usuario", validation: [.email,.required], firstToggle: true).padding(.top, 60)
-                FormTextField(value: $password, message: "Password Required", placeholder: "Contraseña", validation: [.required], firstToggle: true)
+                FormTextField(value: $password, message: "Password Required", placeholder: "Contraseña", validation: [.required],secureInput: true, firstToggle: true)
                 Button("Ingresar", action: {
                     print("text")
                 })
@@ -35,6 +35,7 @@ struct LoginView: View {
                 .cornerRadius(8.0)
                 .padding([.leading, .trailing], 8)
                 .padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .disabled(userName.isEmpty || !userName.isValidEmail() || password.isEmpty)
                 Spacer()
                 Button("Registrarse", action: {
                     print("todo")

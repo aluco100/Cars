@@ -32,6 +32,7 @@ struct FormTextField: View {
             return true
         }
     }
+    var secureInput: Bool = false
     @State var firstToggle: Bool
     
     var body: some View {
@@ -44,13 +45,23 @@ struct FormTextField: View {
                     .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     .font(.custom("OpenSans-Regular", size: 12.0))
             }
-            TextField(placeholder, text: $value, onEditingChanged: {_ in
-                print("cambie")
-                self.firstToggle = false
-            })
+            if secureInput {
+                SecureField(placeholder, text: $value).onTapGesture {
+                    self.firstToggle = false
+                }
                 .frame(height: 50)
                 .border(Color("border-color"), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
                 .cornerRadius(4.0)
+            }else {
+                TextField(placeholder, text: $value, onEditingChanged: {_ in
+                    print("cambie")
+                    self.firstToggle = false
+                })
+                    .frame(height: 50)
+                    .border(Color("border-color"), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(4.0)
+            }
+            
         }
         .padding([.leading,.trailing], 10)
         .onAppear {
@@ -72,6 +83,6 @@ struct FormTextField: View {
 struct FormTextField_Previews: PreviewProvider {
     @State static var value: String = ""
     static var previews: some View {
-        FormTextField(value: Self.$value, message: "Required", placeholder: "Username", validation: [.required], firstToggle: true)
+        FormTextField(value: Self.$value, message: "Required", placeholder: "Username", validation: [.required], secureInput: true, firstToggle: true)
     }
 }
