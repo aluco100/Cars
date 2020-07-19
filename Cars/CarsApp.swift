@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct CarsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().onAppear {
+                FirebaseApp.configure()
+            }
         }
     }
 }
